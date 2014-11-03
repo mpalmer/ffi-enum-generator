@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
 
-task :default => :test
+task :default => :doc
 
 begin
 	Bundler.setup(:default, :development)
@@ -20,5 +20,5 @@ end
 require 'yard'
 
 YARD::Rake::YardocTask.new :doc do |yardoc|
-	yardoc.files = ["README.md", "lib/**/*.rb"]
+	yardoc.files = %w{lib/**/*.rb - README.md}
 end
